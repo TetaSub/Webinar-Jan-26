@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Basis Grotesque Pro";
+  src: url("/fonts/basis/BasisGrotesquePro-Regular.woff2") format("woff2"), url("/fonts/basis/BasisGrotesquePro-Regular.woff") format("woff"), url("/fonts/basis/BasisGrotesquePro-Regular.ttf") format("truetype"), url("/fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.woff2") format("woff2"), url("/fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.woff2") format("woff"), url("/fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basis Grotesque Pro Bold";
+  src: url("./fonts/basis/BasisGrotesquePro-Bold.woff2") format("woff2"), url("./fonts/basis/BasisGrotesquePro-Bold.woff") format("woff"), url("./fonts/basis/BasisGrotesquePro-Bold.ttf") format("truetype"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Bold.woff2") format("woff2"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Bold.woff2") format("woff"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basis Grotesque Pro Medium";
+  src: url("./fonts/basis/BasisGrotesquePro-Medium.woff2") format("woff2"), url("./fonts/basis/BasisGrotesquePro-Medium.woff") format("woff"), url("./fonts/basis/BasisGrotesquePro-Medium.ttf") format("truetype"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Medium.woff2") format("woff2"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Medium.woff2") format("woff"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Basis Grotesque Pro Light";
+  src: url("./fonts/basis/BasisGrotesquePro-Light.woff2") format("woff2"), url("./fonts/basis/BasisGrotesquePro-Light.woff") format("woff"), url("./fonts/basis/BasisGrotesquePro-Light.ttf") format("truetype"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Light.woff2") format("woff2"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Light.woff2") format("woff"), url("./fonts/__MACOSX/basis/._BasisGrotesquePro-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-display: swap;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-family: "Basis Grotesque Pro", "Basis Grotesque Pro Bold", "Basis Grotesque Pro Medium", "Basis Grotesque Pro Light";
+  vertical-align: baseline;
+  width: auto;
+}
+
+.section__tag {
+  font-family: "Basis Grotesque Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+.section__tag_blue {
+  color: #0536FC;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+.section__subtitle {
+  font-family: "Basis Grotesque Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 38px;
+  line-height: 111%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.blue__button {
+  padding: 15px 50px;
+  background-color: #0536FC;
+  font-family: "Basis Grotesque Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+}
+
+.invest-intro {
+  padding: 150px 10% 70px 15%;
+}
+
+.invest-form {
+  display: flex;
+  flex-direction: row;
+}
+.invest-form .aside {
+  flex: 1;
+  padding-left: 15%;
+  padding-right: 5%;
+}
+.invest-form .main {
+  padding-right: 5%;
+}
+.invest-form input {
+  font-family: "Basis Grotesque Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  color: #000000;
+  opacity: 0.6;
+}
+.invest-form a {
+  text-decoration: none;
+  color: #0536FC;
+}
+.invest-form input:focus::-moz-placeholder {
+  color: transparent;
+}
+.invest-form input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+.invest-form input:focus::placeholder {
+  color: transparent;
+}
+.invest-form input {
+  outline: none;
+  cursor: pointer;
+}
+.invest-form button {
+  margin-top: 48px;
+  margin-bottom: 250px;
+  outline: none;
+  cursor: pointer;
+}
+
+.form-item_method {
+  margin-bottom: 48px;
+}
+.form-item_method label {
+  margin-right: 30px;
+}
+
+.form-item_amount {
+  margin-bottom: 20px;
+}
+.form-item_amount .inline {
+  display: inline;
+}
+.form-item_amount p {
+  margin-bottom: 20px;
+}
+.form-item_amount label {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 13px 51px;
+}
+.form-item_amount .hide {
+  display: none;
+}
+.form-item_amount input:checked + label {
+  color: white;
+  background-color: #0536FC;
+  font-style: normal;
+}
+
+.form-item_frequency {
+  margin-bottom: 48px;
+}
+.form-item_frequency label {
+  margin-right: 30px;
+}
+
+.form-item_name {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #000000;
+}
+.form-item_name label {
+  margin-bottom: 20px;
+}
+
+.form-item_email {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #000000;
+}
+.form-item_email label {
+  margin-bottom: 20px;
+}
+
+.form-item_checkbox1 {
+  margin-bottom: 16px;
+}/*# sourceMappingURL=styles.css.map */
