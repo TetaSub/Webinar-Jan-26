@@ -19,11 +19,11 @@
         </div>
 
         <form class="invest-form" action="result.html" method="GET">
-            <div class="aside">
+            <div class="invest-form_aside">
                 <p class="section__tag">виберіть спосіб оплати</p>
             </div>
 
-            <div class="main">
+            <div class="invest-form_main">
 
                 <div class="form-item form-item_method">
                     <div>
@@ -52,10 +52,11 @@
                         <input type="radio" hidden id="1k" name="amount">
                         <label for="1k">1 000</label>                        
                     </div>
-                    <div>
                         <input type="radio" hidden id="own_amount" name="amount">
-                        <label for="own_amount"><input type="number" placeholder="Інша сумма"></label>
-                    </div>
+                        <label style="display: block;" for="own_amount_input">
+                            <input type="number" id="own_amount_input" onfocus="document.getElementById('own_amount').click();"
+                                placeholder="Інша сумма">
+                        </label>
                 </div>
 
                 <div class="form-item form-item_frequency">

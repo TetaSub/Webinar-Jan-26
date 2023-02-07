@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Basis Grotesque Pro';
-    src: url('/fonts/basis/BasisGrotesquePro-Regular.woff2') format('woff2'),
-        url('/fonts/basis/BasisGrotesquePro-Regular.woff') format('woff'),
-        url('/fonts/basis/BasisGrotesquePro-Regular.ttf') format('truetype'),
-        url('/fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.woff2') format('woff2'),
-        url('/fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.woff2') format('woff'),
-        url('/fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.ttf') format('truetype');
+    src: url('./fonts/basis/BasisGrotesquePro-Regular.woff2') format('woff2'),
+        url('./fonts/basis/BasisGrotesquePro-Regular.woff') format('woff'),
+        url('./fonts/basis/BasisGrotesquePro-Regular.ttf') format('truetype'),
+        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.woff2') format('woff2'),
+        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.woff') format('woff'),
+        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Regular.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
 }
@@ -16,7 +16,7 @@
         url('./fonts/basis/BasisGrotesquePro-Bold.woff') format('woff'),
         url('./fonts/basis/BasisGrotesquePro-Bold.ttf') format('truetype'),
         url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Bold.woff2') format('woff2'),
-        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Bold.woff2') format('woff'),
+        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Bold.woff') format('woff'),
         url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Bold.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
@@ -28,7 +28,7 @@
         url('./fonts/basis/BasisGrotesquePro-Medium.woff') format('woff'),
         url('./fonts/basis/BasisGrotesquePro-Medium.ttf') format('truetype'),
         url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Medium.woff2') format('woff2'),
-        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Medium.woff2') format('woff'),
+        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Medium.woff') format('woff'),
         url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Medium.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
@@ -40,25 +40,28 @@
         url('./fonts/basis/BasisGrotesquePro-Light.woff') format('woff'),
         url('./fonts/basis/BasisGrotesquePro-Light.ttf') format('truetype'),
         url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Light.woff2') format('woff2'),
-        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Light.woff2') format('woff'),
+        url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Light.woff') format('woff'),
         url('./fonts/__MACOSX/basis/._BasisGrotesquePro-Light.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
 }
 
 
-* {
-    box-sizing: border-box;    
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    border: 0;
 }
 
 body {
     font-size: 100%;
     font-family: 'Basis Grotesque Pro', 'Basis Grotesque Pro Bold', 'Basis Grotesque Pro Medium', 'Basis Grotesque Pro Light';
     vertical-align: baseline;
-    width: auto;
+    width: auto;    
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
 
@@ -110,16 +113,6 @@ body {
 .invest-form {
     display: flex;
     flex-direction: row;  
-    
-    .aside {   
-        flex: 1;     
-        padding: 0 15% 10px 5%;
-        vertical-align: top;
-    }
-
-    .main {
-        padding-right: 5%;
-    }
 
     input {
         font-family: 'Basis Grotesque Pro';
@@ -151,6 +144,16 @@ body {
         cursor: pointer;
     }
 }
+    
+    .invest-form_aside {   
+        flex: 1;     
+        padding: 0 15% 10px 5%;
+        vertical-align: top;
+    }
+
+    .invest-form_main {
+        padding-right: 5%;
+    }
 
 
 .form-item_method {
@@ -177,17 +180,17 @@ body {
         display:inline-block;
         width: 100%;
     }
+    input:checked+label {
+        color: #ffff;
+        background-color: #0536FC;
+    }
 
     .defined {
         display: flex;
         label {
             text-align: center;
-        }    
-        input:checked+label {
-        color: #ffff;
-        background-color: #0536FC;
-        font-style: normal;
-        }
+        }  
+
     }
 
     input {
@@ -207,7 +210,7 @@ body {
 .form-item_name {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 75%;
     margin-bottom: 20px;
     border-bottom: 1px solid #000000;
 
@@ -219,7 +222,7 @@ body {
 .form-item_email {
     display: flex;
     flex-direction: column;
-    width: 65%;
+    width: 75%;
     margin-bottom: 30px;
     border-bottom: 1px solid #000000;
 
@@ -241,12 +244,12 @@ body {
     .invest-form {
         display: flex;
         flex-direction: column;
-        padding-left: 50px;
+        padding-left: 50px;  
+    }
 
-        .aside {
+    .invest-form_aside {
             padding-left: 0;
         }
-    }
 
     .form-item_method {
         display: flex;
@@ -261,7 +264,12 @@ body {
 @media all and (max-width: 400px) {
     .form-item_amount {
         .defined {
-            flex-direction: column;
-        }
+            flex-direction: column;}
     }
+
+    .form-item_name {
+        width: 90%;}
+
+    .form-item_email {
+        width: 90%;}
 }
