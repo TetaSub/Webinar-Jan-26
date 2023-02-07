@@ -142,12 +142,16 @@ body {
         margin-bottom: 250px;
         outline: none;
         cursor: pointer;
+    }    
+    
+    input[type='radio'] {
+        margin-right: 15px;
     }
 }
     
     .invest-form_aside {   
         flex: 1;     
-        padding: 0 15% 10px 5%;
+        padding: 0 5% 10px 15%;
         vertical-align: top;
     }
 
@@ -164,6 +168,8 @@ body {
     label {
         margin-right: 30px;
     }
+
+
 }
 
 .form-item_amount {
@@ -180,9 +186,16 @@ body {
         display:inline-block;
         width: 100%;
     }
+
+    input[type=number] {
+        background: transparent; 
+        color: #fff;  
+        opacity: unset;        
+    }
+
     input:checked+label {
         color: #ffff;
-        background-color: #0536FC;
+        background-color: #0536FC;              
     }
 
     .defined {
@@ -199,6 +212,8 @@ body {
 }
 
 .form-item_frequency {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 48px;
 
     label {
@@ -271,4 +286,11 @@ body {
 
     .form-item_email {
         width: 90%;}
+
+    .form-item_frequency {
+        flex-direction: column;
+        div {
+            margin-top: 20px;
+        }
+    }     
 }
