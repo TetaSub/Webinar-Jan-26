@@ -127,6 +127,8 @@ body {
 }
 
 .form-item_method {
+  display: flex;
+  flex-direction: row;
   margin-bottom: 48px;
 }
 .form-item_method label {

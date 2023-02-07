@@ -154,6 +154,8 @@ body {
 
 
 .form-item_method {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 48px;
 
     label {
