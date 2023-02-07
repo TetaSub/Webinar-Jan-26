@@ -26,28 +26,34 @@
             <div class="main">
 
                 <div class="form-item form-item_method">
-                    <input type="radio" id="card" name="payment_method">
-                    <label for="card">Банківська карта</label>
-                    <input type="radio" id="paypal" name="payment_method">
-                    <label for="paypal">PayPal</label>
-                    <input type="radio" id="banktransfer" name="payment_method">
-                    <label for="banktransfer">Банківська платіжна квитанція</label>
+                    <div>
+                        <input type="radio" id="card" name="payment_method">
+                        <label for="card">Банківська карта</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="paypal" name="payment_method">
+                        <label for="paypal">PayPal</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="banktransfer" name="payment_method">
+                        <label for="banktransfer">Банківська платіжна квитанція</label>                
+                    </div>
                 </div>
 
                 <div class="form-item form-item_amount">
                     <p class="section__tag">банківська карта</p>
-                    <div class="inline">
-                        <input class="hide" type="radio" id="50k" name="amount">
-                        <label for="50k">50 000</label>
-                        <input class="hide" type="radio" id="30k" name="amount">
-                        <label for="30k">30 000</label>
-                        <input class="hide" type="radio" id="10k" name="amount">
-                        <label for="10k">10 000</label>
-                        <input class="hide" type="radio" id="1k" name="amount">
-                        <label for="1k">1 000</label>
+                    <div class="defined">                        
+                        <input type="radio" hidden id="50k" name="amount">
+                        <label for="50k">50 000</label>                        
+                        <input type="radio" hidden id="30k" name="amount">
+                        <label for="30k">30 000</label>                        
+                        <input type="radio" hidden id="10k" name="amount">
+                        <label for="10k">10 000</label>                         
+                        <input type="radio" hidden id="1k" name="amount">
+                        <label for="1k">1 000</label>                        
                     </div>
                     <div>
-                        <input class="hide" type="radio" id="own_amount" name="amount">
+                        <input type="radio" hidden id="own_amount" name="amount">
                         <label for="own_amount"><input type="number" placeholder="Інша сумма"></label>
                     </div>
                 </div>
