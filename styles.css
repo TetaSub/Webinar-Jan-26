@@ -66,6 +66,28 @@ body {
   color: #000000;
 }
 
+.main__text {
+  font-family: "Basis Grotesque Pro";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  color: #000000;
+  opacity: 0.6;
+}
+
+.small__note {
+  font-family: "Basis Grotesque Pro Light";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.03em;
+  color: #000000;
+  opacity: 0.35;
+}
+
 .blue__button {
   background-color: #0536FC;
   font-family: "Basis Grotesque Pro";
