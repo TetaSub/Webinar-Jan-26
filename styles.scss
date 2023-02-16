@@ -58,7 +58,7 @@ body {
     font-size: 100%;
     font-family: 'Basis Grotesque Pro', 'Basis Grotesque Pro Bold', 'Basis Grotesque Pro Medium', 'Basis Grotesque Pro Light';
     vertical-align: baseline;
-    width: auto;    
+    width: auto;
     margin: 0;
     padding: 0;
     border: 0;
@@ -134,7 +134,7 @@ body {
 
 .invest-form {
     display: flex;
-    flex-direction: row;  
+    flex-direction: row;
 
     input {
         font-family: 'Basis Grotesque Pro';
@@ -146,7 +146,7 @@ body {
         color: #000000;
         opacity: 0.6;
         outline: none;
-        cursor: pointer;    
+        cursor: pointer;
         border: none;
     }
 
@@ -164,22 +164,23 @@ body {
         margin-bottom: 250px;
         outline: none;
         cursor: pointer;
-    }    
-    
+    }
+
     input[type='radio'] {
         margin-right: 15px;
     }
 }
-    
-    .invest-form_aside {   
-        flex: 1;     
-        padding: 0 5% 10px 15%;
-        vertical-align: top;
-    }
 
-    .invest-form_main {
-        padding-right: 5%;
-    }
+
+.invest-form_aside {
+    flex: 1;
+    padding: 0 5% 10px 15%;
+    vertical-align: top;
+}
+
+.invest-form_main {
+    padding-right: 5%;
+}
 
 
 .form-item_method {
@@ -190,8 +191,6 @@ body {
     label {
         margin-right: 30px;
     }
-
-
 }
 
 .form-item_amount {
@@ -205,26 +204,27 @@ body {
         border: 1px solid rgba(0, 0, 0, 0.15);
         padding: 13px 0;
         flex: 1;
-        display:inline-block;
+        display: inline-block;
         width: 100%;
     }
 
     input[type=number] {
-        background: transparent; 
-        color: #fff;  
-        opacity: unset;        
+        background: transparent;
+        color: #fff;
+        opacity: unset;
     }
 
     input:checked+label {
         color: #ffff;
-        background-color: #0536FC;              
+        background-color: #0536FC;
     }
 
     .defined {
         display: flex;
+
         label {
             text-align: center;
-        } 
+        }
     }
 
     input {
@@ -280,12 +280,12 @@ body {
     .invest-form {
         display: flex;
         flex-direction: column;
-        padding-left: 50px;  
+        padding-left: 50px;
     }
 
     .invest-form_aside {
-            padding-left: 0;
-        }
+        padding-left: 0;
+    }
 
     .form-item_method {
         display: flex;
@@ -300,19 +300,65 @@ body {
 @media all and (max-width: 400px) {
     .form-item_amount {
         .defined {
-            flex-direction: column;}
+            flex-direction: column;
+        }
     }
 
     .form-item_name {
-        width: 90%;}
+        width: 90%;
+    }
 
     .form-item_email {
-        width: 90%;}
+        width: 90%;
+    }
 
     .form-item_frequency {
         flex-direction: column;
+
         div {
             margin-top: 20px;
         }
-    }     
+    }
+}
+
+/* styles for more assesability*/
+
+input[type="radio"]:checked+label {
+    font-weight: bold;
+}
+
+input[type="checkbox"]:checked+label {
+    font-weight: bold;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+input:focus-visible {
+    border: 2px dashed #0536FC;
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="radio"]:focus {
+    background-color: #0536FC;
+}
+
+input:focus-visible {
+    border: 2px dashed #0536FC;
+    border-radius: 3px;
+    outline: none;
+}
+
+input[type="radio"]:focus {
+    background-color: #0536FC;
+}
+
+a:focus-visible {
+    border: 2px dashed #0536FC;
+    background-color: #b7c5f0;
+    border-radius: 3px;
+    font-style: italic;
+}
+
+.blue__button:focus {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }

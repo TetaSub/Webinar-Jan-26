@@ -268,4 +268,44 @@ body {
   .form-item_frequency div {
     margin-top: 20px;
   }
+}
+/* styles for more assesability*/
+input[type=radio]:checked + label {
+  font-weight: bold;
+}
+
+input[type=checkbox]:checked + label {
+  font-weight: bold;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+input:focus-visible {
+  border: 2px dashed #0536FC;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type=radio]:focus {
+  background-color: #0536FC;
+}
+
+input:focus-visible {
+  border: 2px dashed #0536FC;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type=radio]:focus {
+  background-color: #0536FC;
+}
+
+a:focus-visible {
+  border: 2px dashed #0536FC;
+  background-color: #b7c5f0;
+  border-radius: 3px;
+  font-style: italic;
+}
+
+.blue__button:focus {
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }/*# sourceMappingURL=styles.css.map */
