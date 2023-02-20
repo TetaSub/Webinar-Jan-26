@@ -19,85 +19,124 @@
         </div>
 
         <form class="invest-form" action="result.html" method="GET">
+
             <div class="invest-form_aside">
                 <p class="section__tag">виберіть спосіб оплати</p>
             </div>
 
             <div class="invest-form_main">
-
-                <div class="form-item form-item_method">
+                <fieldset class="form-item form-item_method">
+                    <legend>виберіть спосіб оплати</legend>
                     <div>
-                        <input type="radio" id="card" name="payment_method">
+                        <input type="radio" id="card" name="payment_method" required tabindex="1">
                         <label for="card">Банківська карта</label>
                     </div>
                     <div>
-                        <input type="radio" id="paypal" name="payment_method">
+                        <input type="radio" id="paypal" name="payment_method" required tabindex="2">
                         <label for="paypal">PayPal</label>
                     </div>
                     <div>
-                        <input type="radio" id="banktransfer" name="payment_method">
+                        <input type="radio" id="banktransfer" name="payment_method" required tabindex="3">
                         <label for="banktransfer">Банківська платіжна квитанція</label>
                     </div>
-                </div>
+                </fieldset>
 
-                <div class="form-item form-item_amount">
-                    <p class="section__tag">банківська карта</p>
+                <fieldset class="form-item form-item_amount">
+                    <legend class="section__tag">банківська карта</legend>
                     <div class="defined">
-                        <input type="radio" hidden id="50k" name="amount">
+                        <input type="radio" id="50k" name="amount" value="50k" tabindex="4" class="visually-hidden"
+                            required>
                         <label for="50k">50 000</label>
-                        <input type="radio" hidden id="30k" name="amount">
+                        <input type="radio" id="30k" name="amount" value="30k" tabindex="5" class="visually-hidden">
                         <label for="30k">30 000</label>
-                        <input type="radio" hidden id="10k" name="amount">
+                        <input type="radio" id="10k" name="amount" value="10k" tabindex="6" class="visually-hidden">
                         <label for="10k">10 000</label>
-                        <input type="radio" hidden id="1k" name="amount">
+                        <input type="radio" id="1k" name="amount" value="1k" tabindex="7" class="visually-hidden">
                         <label for="1k">1 000</label>
                     </div>
-                    <input type="radio" hidden id="own_amount" name="amount">
+                    <input type="radio" id="own_amount_input" name="amount" tabindex="8" class="visually-hidden">
                     <label style="display: block;" for="own_amount_input">
-                        <input type="number" id="own_amount_input"
-                            onfocus="document.getElementById('own_amount').click();" placeholder="Інша сумма">
+                        <input type="number" id="own_amount" placeholder="Інша сумма" tabindex="9"
+                            oninput="checkOwnAmount()" onfocus="document.getElementById('own_amount').click();">
                     </label>
-                </div>
+                </fieldset>
 
-                <div class="form-item form-item_frequency">
+
+                <fieldset class="form-item form-item_frequency">
+                    <legend>Виберіть частоту платежів</legend>
                     <div>
-                        <input type="radio" id="monthly" name="frequency">
+                        <input type="radio" id="monthly" name="frequency" required tabindex="10">
                         <label for="monthly">Щомісячно</label>
                     </div>
                     <div>
-                        <input type="radio" id="single" name="frequency">
+                        <input type="radio" id="single" name="frequency" required tabindex="11">
                         <label for="single">Одноразово</label>
                     </div>
-                </div>
+                </fieldset>
 
                 <div class="form-item form-item_name">
                     <label class="section__tag" for="name">ім’я</label>
                     <input type="text" name="name" id="name" placeholder="Напишіть ваше ім’я" autocomplete="name"
-                        required>
+                        required tabindex="12" title="Напишіть ваше ім’я">
                 </div>
 
                 <div class="form-item form-item_email">
                     <label class="section__tag" for="email">Email</label>
                     <input type="email" name="email" id="email" placeholder="Напишіть вашу електронну адресу"
-                        autocomplete="email" required>
+                        autocomplete="email" required tabindex="13" title="Напишіть вашу  електронну адресу">
                 </div>
 
                 <div class="form-item form-item_checkbox1">
-                    <input type="checkbox" name="checkbox" id="checkbox" width="20" height="20" required>
-                    <label for="checkbox">Я приймаю <a href="#">Договір оферти</a></label>
+                    <input type="checkbox" name="checkbox" id="checkbox1" width="20" height="20" required tabindex="14">
+                    <label for="checkbox1">Я приймаю <a href="#" tabindex="15">Договір оферти</a></label>
                 </div>
 
                 <div class="form-item">
-                    <input type="checkbox" name="checkbox" id="checkbox" width="20" height="20" required>
-                    <label for="checkbox">Я приймаю <a href="#">Угоду про використання персональних даних</a></label>
+                    <input type="checkbox" name="checkbox" id="checkbox2" width="20" height="20" required tabindex="16">
+                    <label for="checkbox2">Я приймаю <a href="#" tabindex="17">Угоду про використання персональних
+                            даних</a></label>
                 </div>
 
-                <button class="blue__button">відправити</button>
+                <button class="blue__button" tabindex="18">відправити</button>
 
             </div>
         </form>
 
     </section>
+
+
+    <script>
+        function checkOwnAmount() {
+            var ownAmountInput = document.getElementById('own_amount');
+            var ownAmountRadio = document.getElementById('own_amount_input');
+            ownAmountRadio.checked = true;
+        }
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter' && (event.target.type === 'radio' || event.target.type === 'checkbox')) {
+                event.target.checked = true;
+            }
+        });
+
+        var formElements = document.querySelectorAll('form input, form select, form textarea, form button, form a');
+        var index = -1;
+        for (var i = 0; i < formElements.length; i++) {
+            if (formElements[i].getAttribute('tabindex') != -1) {
+                formElements[i].setAttribute('tabindex', ++index);
+            }
+        }
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Tab') {
+                e.preventDefault();
+                index++;
+                if (index >= formElements.length) {
+                    index = 0;
+                }
+                formElements[index].focus();
+            }
+        });
+    </script>
+
+
 
 </body>
 

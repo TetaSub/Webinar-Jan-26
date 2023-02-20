@@ -196,7 +196,7 @@ body {
 .form-item_amount {
     margin-bottom: 20px;
 
-    p {
+    .section__tag {
         margin-bottom: 20px;
     }
 
@@ -323,42 +323,68 @@ body {
 
 /* styles for more assesability*/
 
+input[type="radio"]:hover+label {
+    font-weight: bold;
+}
+
 input[type="radio"]:checked+label {
     font-weight: bold;
 }
 
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
 input[type="checkbox"]:checked+label {
     font-weight: bold;
-    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
 
-input:focus-visible {
-    border: 2px dashed #0536FC;
+input:focus-visible+label {
+    border: 2px solid #0536FC;
     border-radius: 3px;
     outline: none;
 }
 
-input[type="radio"]:focus {
-    background-color: #0536FC;
-}
-
 input:focus-visible {
-    border: 2px dashed #0536FC;
+    border: 2px dotted #0536FC;
     border-radius: 3px;
     outline: none;
 }
 
-input[type="radio"]:focus {
-    background-color: #0536FC;
-}
 
 a:focus-visible {
-    border: 2px dashed #0536FC;
-    background-color: #b7c5f0;
-    border-radius: 3px;
     font-style: italic;
+    outline-color: #0536FC !important;
+}
+
+a:visited {
+    color: purple;
 }
 
 .blue__button:focus {
     box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+}
+
+.form-item_method {
+    legend {
+        display: none;
+    }
+}
+
+.form-item_frequency {
+    legend {
+        display: none;
+    }
 }
